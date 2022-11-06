@@ -14,4 +14,4 @@ COPY . .
 
 EXPOSE 4567
 
-CMD ["/bin/sh", "start-railway.sh"]
+CMD ["/bin/sh", "start-docker.sh"]
