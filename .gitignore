@@ -1,0 +1,9 @@
+downloads/*
+extensions/*
+local/*
+thumbnails/*
+webUI/*
+
+database.mv.db
+database.trace.db
+server.jar

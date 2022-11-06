@@ -1,0 +1,2 @@
+run = "java -Dsuwayomi.tachidesk.config.server.rootDir='/home/runner/tachidesk' -jar server.jar"
+entrypoint = "update.sh"
