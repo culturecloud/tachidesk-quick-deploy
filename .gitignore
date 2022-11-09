@@ -1,3 +1,4 @@
+
 downloads/*
 extensions/*
 local/*
@@ -7,3 +8,4 @@ webUI/*
 database.mv.db
 database.trace.db
 server.jar
+server.jar.bak
