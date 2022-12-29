@@ -14,6 +14,6 @@ COPY . .
 
 EXPOSE 4567
 
-RUN bash upgrade.sh
+RUN /bin/sh upgrade.sh
 
 CMD ["/bin/sh", "start-docker.sh"]
