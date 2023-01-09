@@ -1,1 +1,1 @@
-run = ["/bin/sh", "start-replit.sh"]
+run = "reset; bash start.sh"
