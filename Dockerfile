@@ -12,6 +12,4 @@ WORKDIR /home/suwayomi
 
 COPY . .
 
-EXPOSE 4567
-
 CMD ["/bin/sh", "start.sh"]
