@@ -2,7 +2,7 @@
 
 if [ ! -f server.jar ]
 then
-    curl -L $(curl -s https://api.github.com/repos/suwayomi/tachidesk-server-preview/releases/latest | jq -r '.assets[9] | .browser_download_url') -o server.jar
+    curl -L $(curl -s https://api.github.com/repos/suwayomi/tachidesk-server/releases/latest | jq -r '.assets[10] | .browser_download_url') -o server.jar
 fi
 
 if [ -v "REPL_SLUG" ]
