@@ -1,15 +1,42 @@
-FROM alpine:latest
+FROM alpine:3.17
 
-RUN apk --update add curl jq openjdk8-jre-base tzdata
+ENV TZ Asia/Dhaka \
+    DATA_DIR /home/culturecloud/tachidesk \
+    XDG_CONFIG_HOME /home/culturecloud/.config
+    
+ENV RCLONE_CONFIG_HBACKUP_TYPE hasher \
+    RCLONE_CONFIG_HBACKUP_REMOTE backup: \
+    RCLONE_CONFIG_HBACKUP_HASHES md5 \
+    RCLONE_CONFIG_HLOCAL_TYPE hasher \
+    RCLONE_CONFIG_HLOCAL_REMOTE ${DATA_DIR} \
+    RCLONE_CONFIG_HLOCAL_HASHES md5 \
+    RCLONE_MEGA_HARD_DELETE true \
+    RCLONE_UPDATE true \
+    RCLONE_RETRIES 10 \
+    RCLONE_PROGRESS true \
+    RCLONE_LOG_LEVEL ERROR \
+    RCLONE_USE_MMAP true \
+    RCLONE_STATS_ONE_LINE true
 
-RUN addgroup -g 1000 -S suwayomi && adduser -u 1000 -S suwayomi -G suwayomi
+RUN apk --update add \
+    openjdk8-jre-base \
+    goreman \
+    rclone \
+    curl \
+    bash \
+    jq \
+    tzdata
 
-RUN mkdir -p /home/suwayomi && chown -R suwayomi:suwayomi /home/suwayomi
+RUN addgroup -g 1000 -S culturecloud && \
+    adduser -u 1000 -S culturecloud -G culturecloud
 
-USER suwayomi
+RUN mkdir -p /home/culturecloud && \
+    chown -R culturecloud:culturecloud /home/culturecloud
 
-WORKDIR /home/suwayomi
+USER culturecloud
+
+WORKDIR /home/culturecloud
 
 COPY . .
 
-CMD ["/bin/sh", "start.sh"]
+CMD ["bash", "start.sh"]

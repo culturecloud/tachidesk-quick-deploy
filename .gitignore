@@ -1,11 +1,7 @@
-
-downloads/*
-extensions/*
-local/*
-thumbnails/*
-webUI/*
+.config/*
+tachidesk/*
 
 database.mv.db
 database.trace.db
 server.jar
-server.jar.backup
+version.json

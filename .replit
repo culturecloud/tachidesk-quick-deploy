@@ -1,1 +1,20 @@
-run = "reset; bash start.sh"
+run = "reset && bash start.sh"
+
+[nix]
+channel = "unstable"
+
+[env]
+DATA_DIR = "/home/runner/${REPL_SLUG}/tachidesk"
+RCLONE_CONFIG_HBACKUP_TYPE = "hasher"
+RCLONE_CONFIG_HBACKUP_REMOTE = "backup:tachidesk"
+RCLONE_CONFIG_HBACKUP_HASHES = "md5"
+RCLONE_CONFIG_HLOCAL_TYPE = "hasher"
+RCLONE_CONFIG_HLOCAL_REMOTE = "${DATA_DIR}"
+RCLONE_CONFIG_HLOCAL_HASHES = "md5"
+RCLONE_MEGA_HARD_DELETE = "true"
+RCLONE_UPDATE = "true"
+RCLONE_RETRIES = "10"
+RCLONE_PROGRESS = "true"
+RCLONE_LOG_LEVEL = "ERROR"
+RCLONE_USE_MMAP = "true"
+RCLONE_STATS_ONE_LINE = "true"
