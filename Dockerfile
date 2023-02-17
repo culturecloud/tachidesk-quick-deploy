@@ -33,11 +33,12 @@ RUN addgroup -g 1000 -S culturecloud && \
     adduser -u 1000 -S culturecloud -G culturecloud
 
 RUN mkdir -p /home/culturecloud && \
-    chown -R culturecloud:culturecloud /home/culturecloud
-
-USER culturecloud
+    chown -R culturecloud:culturecloud /home/culturecloud && \
+    chmod 755 /home/culturecloud
 
 WORKDIR /home/culturecloud
+
+USER culturecloud
 
 COPY . .
 
