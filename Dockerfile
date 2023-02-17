@@ -5,7 +5,7 @@ ENV TZ="Asia/Dhaka" \
     XDG_CONFIG_HOME="/home/culturecloud/.config"
     
 ENV RCLONE_CONFIG_HBACKUP_TYPE="hasher" \
-    RCLONE_CONFIG_HBACKUP_REMOTE="backup:" \
+    RCLONE_CONFIG_HBACKUP_REMOTE="backup:tachidesk" \
     RCLONE_CONFIG_HBACKUP_HASHES="md5" \
     RCLONE_CONFIG_HLOCAL_TYPE="hasher" \
     RCLONE_CONFIG_HLOCAL_REMOTE="${DATA_DIR}" \
@@ -31,7 +31,7 @@ RUN apk update && \
 
 RUN addgroup -g 1000 -S culturecloud && \
     adduser -u 1000 -S culturecloud -G culturecloud && \
-    mkdir -p /home/culturecloud/tachidesk && \
+    mkdir -p /home/culturecloud && \
     chown -R culturecloud:culturecloud /home/culturecloud && \
     chmod 755 /home/culturecloud
 
