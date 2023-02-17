@@ -40,6 +40,6 @@ WORKDIR /home/culturecloud
 
 USER culturecloud
 
-COPY . .
+COPY --chown=culturecloud:culturecloud . .
 
 CMD ["bash", "start.sh"]
