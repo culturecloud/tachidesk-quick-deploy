@@ -16,14 +16,16 @@ ENV RCLONE_CONFIG_HBACKUP_TYPE hasher \
     RCLONE_USE_MMAP true \
     RCLONE_STATS_ONE_LINE true
 
-RUN apk --update add \
+RUN apk update && \
+    apk add --no-cache --update \
     openjdk8-jre-base \
     goreman \
     rclone \
     curl \
     bash \
     jq \
-    tzdata
+    tzdata && \
+    rm /var/cache/apk/*
 
 RUN addgroup -g 1000 -S culturecloud && \
     adduser -u 1000 -S culturecloud -G culturecloud
