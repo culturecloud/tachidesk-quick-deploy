@@ -1,4 +1,4 @@
-FROM alpine:3.17
+FROM alpine:edge
 
 ENV TZ Asia/Dhaka \
     DATA_DIR /home/culturecloud/tachidesk \
