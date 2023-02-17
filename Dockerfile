@@ -2,8 +2,9 @@ FROM alpine:edge
 
 ENV TZ="Asia/Dhaka" \
     DATA_DIR="/home/culturecloud/tachidesk" \
-    XDG_CONFIG_HOME="/home/culturecloud/.config" \
-    RCLONE_CONFIG_HBACKUP_TYPE="hasher" \
+    XDG_CONFIG_HOME="/home/culturecloud/.config"
+    
+ENV RCLONE_CONFIG_HBACKUP_TYPE="hasher" \
     RCLONE_CONFIG_HBACKUP_REMOTE="backup:" \
     RCLONE_CONFIG_HBACKUP_HASHES="md5" \
     RCLONE_CONFIG_HLOCAL_TYPE="hasher" \
