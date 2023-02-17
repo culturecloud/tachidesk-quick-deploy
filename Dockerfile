@@ -30,7 +30,7 @@ RUN apk update && \
 
 RUN addgroup -g 1000 -S culturecloud && \
     adduser -u 1000 -S culturecloud -G culturecloud && \
-    mkdir -p /home/culturecloud && \
+    mkdir -p /home/culturecloud/tachidesk && \
     chown -R culturecloud:culturecloud /home/culturecloud && \
     chmod 755 /home/culturecloud
 
