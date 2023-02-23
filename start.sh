@@ -22,7 +22,7 @@ else
 fi
 
 if [[ $current_version != $latest_version || ! -f "server.jar" ]]; then
-  echo -e "\033[1;33mNew version ($latest_version) of Tachidesk Server  available! Downloading ...\033[0m"
+  echo -e "\033[1;33mNew version ($latest_version) of Tachidesk Server available! Downloading...\033[0m"
   curl -sL $download_url -o server.jar || echo -e "\033[1;31mERROR! Could not download the latest version of Tachidesk Server! Please check if the releases URL is valid or not.\033[0m"
   echo "{\"branch\": \"$BRANCH\", \"latest\": \"$latest_version\"}" >$version_file
 else

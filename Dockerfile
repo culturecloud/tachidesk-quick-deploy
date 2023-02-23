@@ -17,16 +17,20 @@ ENV RCLONE_CONFIG_HBACKUP_TYPE="hasher" \
     RCLONE_STATS_ONE_LINE="true"
 
 RUN apk update && \
+    apk upgrade && \
+    apk add --virtual venv wget && \
+    echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" | tee -a /etc/apk/repositories && \
+    echo "https://apk.bell-sw.com/main" | tee -a /etc/apk/repositories && \
+    wget -P /etc/apk/keys/ https://apk.bell-sw.com/info@bell-sw.com-5fea454e.rsa.pub && \
+    apk del venv && \
     apk add --no-cache \
-        openjdk8-jre-base \
-        rclone \
-        curl \
         bash \
+        bellsoft-java8-runtime \
+        curl \
+        goreman \
         jq \
+        rclone \
         tzdata && \
-    apk add --no-cache \
-        --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing/ \
-        goreman && \
     rm -rf /var/cache/apk/*
 
 RUN addgroup -g 1000 -S culturecloud && \

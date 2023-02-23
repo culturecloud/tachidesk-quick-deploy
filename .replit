@@ -4,6 +4,7 @@ run = "reset && bash start.sh"
 channel = "unstable"
 
 [env]
+LANG = "en_US.UTF-8"
 DATA_DIR = "/home/runner/${REPL_SLUG}/tachidesk"
 RCLONE_CONFIG_HBACKUP_TYPE = "hasher"
 RCLONE_CONFIG_HBACKUP_REMOTE = "backup:tachidesk"
