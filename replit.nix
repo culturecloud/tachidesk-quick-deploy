@@ -1,5 +1,6 @@
 { pkgs }: {
     deps = [
+        pkgs.lz4
         pkgs.shfmt
         pkgs.goreman
         pkgs.rclone
