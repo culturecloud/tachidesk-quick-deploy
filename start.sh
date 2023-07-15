@@ -29,6 +29,7 @@ else
   echo -e "\033[1;33mAlready using the latest version ($current_version) of Tachidesk Server!\033[0m"
 fi
 
+mkdir -p $DATA_DIR
 mkdir -p $XDG_CONFIG_HOME/rclone/
 
 if [[ -n $RCLONE_CONF ]]; then

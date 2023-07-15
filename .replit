@@ -1,4 +1,4 @@
-run = "reset && mkdir -p $DATA_DIR && bash start.sh"
+run = "reset && bash start.sh"
 
 [nix]
 channel = "unstable"

@@ -10,7 +10,7 @@ sleep 60
 while [[ -f $XDG_CONFIG_HOME/rclone/rclone.conf ]]; do
   echo -e "\033[1;33mStarting backup task...\033[0m"
   #rclone md5sum hlocal: >/dev/null
-  tar -C $DATA_DIR -acf tachidesk.tar.lz4 --exclude="*.tmp" --exclude="webUI" .
+  tar -C $DATA_DIR -acf tachidesk.tar.lz4 --exclude="*.tmp" .
   rclone copy tachidesk.tar.lz4 hbackup:
   rm tachidesk.tar.lz4
   echo -e "\033[1;33mDownloading local library...\033[0m"
