@@ -30,6 +30,7 @@ RUN apk update && \
         goreman \
         jq \
         rclone \
+        tar \
         tzdata && \
     rm -rf /var/cache/apk/*
 

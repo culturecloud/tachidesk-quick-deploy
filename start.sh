@@ -42,7 +42,9 @@ if [[ ! -f $XDG_CONFIG_HOME/rclone/rclone.conf ]]; then
   echo -e "\033[1;33mWARNING! Backup remote is not configured, your data won't be saved. Follow the project README for more information.\033[0m"
 else
   echo -e "\033[1;33mDownloading previously backed up data...\033[0m"
-  rclone --progress copy hbackup: hlocal:
+  rclone copy hbackup:tachidesk.zip .
+  tar -xf tachidesk.zip -C /
+  rm tachidesk.zip
 fi
 
 goreman -set-ports=false \

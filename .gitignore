@@ -3,7 +3,5 @@ tachidesk/*
 
 !tachidesk/server.conf
 
-database.mv.db
-database.trace.db
 server.jar
 version.json
