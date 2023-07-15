@@ -1,8 +1,6 @@
 .config/*
 tachidesk/*
 
-!tachidesk/server.conf
-
 server.jar
 version.json
 tachidesk.tar.lz4

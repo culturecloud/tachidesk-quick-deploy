@@ -43,7 +43,7 @@ if [[ ! -f $XDG_CONFIG_HOME/rclone/rclone.conf ]]; then
 else
   echo -e "\033[1;33mDownloading previously backed up data...\033[0m"
   rclone copy hbackup:tachidesk.tar.lz4 .
-  tar -C $DATA_DIR --overwrite -axf tachidesk.tar.lz4
+  tar -C $DATA_DIR --recursive-unlink -aUxf tachidesk.tar.lz4
   rm tachidesk.tar.lz4
 fi
 
