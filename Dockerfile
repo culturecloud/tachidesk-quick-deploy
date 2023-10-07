@@ -1,4 +1,4 @@
-FROM alpine:3.18
+FROM alpine:edge
 
 ENV TZ="Asia/Dhaka" \
     DATA_DIR="/home/culturecloud/tachidesk" \
@@ -31,6 +31,7 @@ RUN apk update && \
         jq \
         mimalloc2 \
         rclone \
+        tini \
         tzdata && \
     rm -rf /var/cache/apk/*
 
@@ -46,4 +47,5 @@ USER culturecloud
 
 COPY --chown=culturecloud:culturecloud . .
 
+ENTRYPOINT ["/tini", "--"]
 CMD ["bash", "start.sh"]
