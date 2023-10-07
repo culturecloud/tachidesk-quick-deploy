@@ -31,7 +31,6 @@ RUN apk update && \
         jq \
         mimalloc2 \
         rclone \
-        tini \
         tzdata && \
     rm -rf /var/cache/apk/*
 
@@ -47,5 +46,4 @@ USER culturecloud
 
 COPY --chown=culturecloud:culturecloud . .
 
-ENTRYPOINT ["/tini", "--"]
 CMD ["bash", "start.sh"]
