@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine:3.18
 
 ENV TZ="Asia/Dhaka" \
     DATA_DIR="/home/culturecloud/tachidesk" \
@@ -29,6 +29,7 @@ RUN apk update && \
         curl \
         goreman \
         jq \
+        mimalloc2 \
         rclone \
         tzdata && \
     rm -rf /var/cache/apk/*
